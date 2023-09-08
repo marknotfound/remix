@@ -149,6 +149,7 @@ export const loader = async () => {
 
 export default function Posts() {
   const { posts } = useLoaderData<typeof loader>();
+  console.log(posts);
   return (
     <main>
       <h1>Posts</h1>
@@ -575,7 +576,7 @@ export default function PostAdmin() {
             {posts.map((post) => (
               <li key={post.slug}>
                 <Link
-                  to={post.slug}
+                  to={`/posts/${post.slug}`}
                   className="text-blue-600 underline"
                 >
                   {post.title}
